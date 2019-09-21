@@ -1,0 +1,395 @@
+%%%%% packages
+%\pagestyle{empty}
+%\pagestyle{headings} #to put numbers on top
+%\usepackage{times}
+%%\usepackage[dvips]{graphics}
+%\def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
+%    T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
+%%\DeclareGraphicsExtensions{.eps.gz,.eps,.epsi.gz,.epsi,.ps,.ps.gz}
+%%\DeclareGraphicsRule{*}{ps}{*}{}
+%\usepackage[american]{babel}
+%%\usepackage{psfig}
+%\usepackage{psfrag}
+%%\usepackage{color}
+%%\graphicspath{{fig/}} %\textwidth=6.5in \textheight=9in
+%\parindent=0.0cm
+%\parskip=0.5cm
+%\oddsidemargin=0.0in \evensidemargin=0.0in \topmargin=-0.4in
+%\renewcommand{\baselinestretch}{1.1}
+%\marginparwidth .3in
+%\oddsidemargin  -0.3in
+%\evensidemargin  -0.2in
+%\marginparsep .3in
+% above from rebecka
+%%\usepackage{graphicx, amsmath, amssymb, latexsym}
+\usepackage{amsmath}
+\usepackage{latexsym}
+\usepackage{mathrsfs} % for math script
+%%\usepackage{graphicx}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+
+\usepackage{graphicx}
+\usepackage{verbatim}
+\usepackage{geometry}
+
+%%%%% margins used on stat
+%%\sloppy \hyphenpenalty=10000
+%\pagestyle{myheadings} %\markright{}
+%\renewcommand{\baselinestretch}{1.5}
+%%\hfuzz=20truept
+
+%%%% special math stuff %%%%
+\newcommand{\bel}{\begin{eqnarray}\label}
+\newcommand{\eel}{\end{eqnarray}}
+%%% \cr is the same as \nonumber\\ at the end of line
+\newcommand{\bes}{\begin{eqnarray*}}
+\newcommand{\ees}{\end{eqnarray*}}
+
+\def\convas{\stackrel{{\rm a.s}}{\longrightarrow}}
+\def\convp{\stackrel{{\rm P}}{\longrightarrow}}
+\def\convd{\stackrel{{\rm D}}{\longrightarrow}}
+\def\toD{\convd}
+\def\towLik{\buildrel{\hbox{w-lik}}\over\longrightarrow}
+\def\toLik{\buildrel{\hbox{lik}}\over\longrightarrow}
+
+%%% steph stuff
+\def\benu{\begin{enumerate}}
+\def\eenu{\end{enumerate}}
+
+
+\def\argmax{\mathop{\rm arg\, max}}
+\def\argmin{\mathop{\rm arg\, min}}
+\def\largmax{\mathop{\rm local.arg\, max}}
+\def\largmin{\mathop{\rm local.arg\, min}}
+%\def\real{\mathop{{\rm I}\kern-.2em\hbox{\rm R}}\nolimits}
+\def\real{{\mathbb{R}}}
+\def\integer{{\mathbb{Z}}}
+\def\breal{\overline{\real}}
+\def\complex{\mathop{{\rm I}\kern-.58em\hbox{\rm C}}\nolimits}
+\def\pa{\partial}
+\def\f{\frac}
+\def\vsp{\vspace{5mm}}
+\def\dsp{\displaystyle}
+
+\def\diag{\hbox{diag}}
+\def\new{\hbox{new}}
+\def\old{\hbox{old}}
+\def\pnew{(\hbox{new})}
+\def\pold{(\hbox{old})}
+\def\rank{\hbox{rank}}
+\def\Rem{\hbox{Rem}}
+\def\sgn{\hbox{sgn}}\def\sgn{\hbox{\rm sgn}}
+\def\trace{\hbox{trace}}
+\def\Cov{\hbox{Cov}}
+\def\Corr{\hbox{Corr}}
+\def\Var{\hbox{Var}}
+\def\as{\hbox{a.s.}}
+\def\supp{\hbox{supp}}
+
+\newcommand{\Lone}{\ensuremath{{L_1}}}
+\newcommand{\Lpar}{\ensuremath{{\mathbf{L}}}}
+\newcommand{\Bfbeta}{{\mbox{\boldmath $\beta$}}}
+\newcommand{\Bf}[1]{{\ensuremath{\mathbf{#1}}}}
+\newcommand{\BfZ}{\mathbf{Z}}
+\newcommand{\RK}[1]{\ensuremath{\mathbb{R}^{#1}}}
+
+%%% letters with "\def" are sorted
+\def\mathbold{\boldsymbol} %\def\mathbold{\mathbf}
+%%% English, example
+%\def\bc{\mathbold{c}}\def\chat{\widehat{c}}\def\ctil{\widetilde{c}}\def\cbar{{\overline c}}
+%\def\hbc{{\widehat{\bc}}}\def\tbc{{\widetilde{\bc}}}
+%\def\bC{\mathbold{C}}\def\hbC{{\widehat{\bC}}}\def\tbC{{\widetilde{\bC}}}
+%\def\calC{{\cal C}}\def\scrC{{\mathscr C}}\def\Chat{\widehat{C}}\def\Ctil{{\widetilde C}}\def\Cbar{{\overline C}}
+
+%\def\bfc{\mathbold{c}}\def\chat{\widehat{c}}\def\ctil{\widetilde{c}}\def\cbar{{\overline c}}
+%\def\hbc{{\widehat{\bfc}}}\def\tbc{{\widetilde{\bfc}}}
+%\def\bC{\mathbold{C}}\def\hbC{{\widehat{\bC}}}\def\tbC{{\widetilde{\bC}}}
+%\def\calC{{\cal C}}\def\scrC{{\mathscr C}}\def\Chat{\widehat{C}}\def\Ctil{{\widetilde C}}\def\Cbar{{\overline C}}
+
+\def\ba{\mathbold{a}}\def\bfa{\mathbold{a}}\def\ahat{\widehat{a}}\def\atil{\widetilde{a}}
+\def\hba{{\widehat{\ba}}}\def\tba{{\widetilde{\ba}}}
+\def\bA{\mathbold{A}}\def\calA{{\cal A}}\def\scrA{{\mathscr A}}\def\Ahat{\widehat{A}}\def\Atil{{\widetilde A}}
+\def\hbA{{\widehat{\bA}}}\def\tbA{{\widetilde{\bA}}}
+\def\Ahati{{{\widehat A}_i}}\def\AhatJ{{{\widehat A}_{J,n}}}\def\Atili{{{\widetilde A}_i}}\def\AtilJ{{{\widetilde A}_{J,n}}}
+
+\def\bb{\mathbold{b}}\def\bhat{\widehat{b}}\def\btil{\widetilde{b}}
+\def\hbb{{\widehat{\bb}}}\def\tbb{{\widetilde{\bb}}}
+\def\bB{\mathbold{B}}\def\calB{{\cal B}}\def\scrB{{\mathscr B}}\def\Bhat{\widehat{B}}\def\Btil{{\widetilde B}}
+\def\hbB{{\widehat{\bB}}}\def\tbB{{\widetilde{\bB}}}
+
+\def\bfc{\mathbold{c}}\def\chat{\widehat{c}}\def\ctil{\widetilde{c}}
+\def\hbc{{\widehat{\bfc}}}\def\tbc{{\widetilde{\bfc}}}
+\def\bfC{\mathbold{C}}\def\calC{{\cal C}}\def\scrC{{\mathscr C}}\def\Chat{\widehat{C}}\def\Ctil{{\widetilde C}}
+\def\hbC{{\widehat{\bfC}}}\def\tbC{{\widetilde{\bfC}}}
+
+\def\bc{\mathbold{c}}\def\chat{\widehat{c}}\def\ctil{\widetilde{c}}
+\def\hbc{{\widehat{\bc}}}\def\tbc{{\widetilde{\bc}}}
+\def\bC{\mathbold{C}}\def\calC{{\cal C}}\def\scrC{{\mathscr C}}\def\Chat{\widehat{C}}\def\Ctil{{\widetilde C}}
+\def\hbC{{\widehat{\bC}}}\def\tbC{{\widetilde{\bC}}}
+
+\def\bfd{\mathbold{d}}\def\dhat{\widehat{d}}\def\dtil{\widetilde{d}}
+\def\hbd{{\widehat{\bd}}}\def\tbd{{\widetilde{\bd}}}
+\def\bD{\mathbold{D}}\def\calD{{\cal D}}\def\scrD{{\mathscr D}}\def\Dhat{\widehat{D}}\def\Dtil{{\widetilde D}}
+\def\hbD{{\widehat{\bD}}}\def\tbD{{\widetilde{\bD}}}
+
+\def\bfe{\mathbold{e}}\def\ehat{\widehat{e}}\def\etil{\widetilde{e}}
+\def\hbe{{\widehat{\bfe}}}\def\tbe{{\widetilde{\bfe}}}
+\def\bE{\mathbold{E}}\def\calE{{\cal E}}\def\scrE{{\mathscr E}}\def\Ehat{\widehat{E}}\def\Etil{{\widetilde E}}
+\def\hbE{{\widehat{\bE}}}\def\tbE{{\widetilde{\bE}}}
+
+\def\bff{\mathbold{f}}\def\fhat{\widehat{f}}\def\hf{\widehat{f}}\def\ftil{\widetilde{f}}
+\def\hbf{{\widehat{\bff}}}\def\tbf{{\widetilde{\bff}}}
+\def\bF{\mathbold{F}}\def\calF{{\cal F}}\def\scrF{{\mathscr F}}\def\Fhat{\widehat{F}}\def\Ftil{{\widetilde F}}
+\def\hbF{{\widehat{\bF}}}\def\tbF{{\widetilde{\bF}}}\def\Fbar{{\overline F}}
+\def\fphat{\widehat{f'_i}}\def\fbara{\bar{f}^{(1)}}\def\fbarb{\bar{f}^{(2)}}\def\fbarc{\bar{f}^{(3)}}
+
+\def\bg{\mathbold{g}}\def\ghat{\widehat{g}}\def\gtil{\widetilde{g}}
+\def\hbg{{\widehat{\bg}}}\def\tbg{{\widetilde{\bg}}}\def\bgbar{{\overline{\bg}}}
+\def\bG{\mathbold{G}}\def\calG{{\cal G}}\def\scrG{{\mathscr G}}\def\Ghat{\widehat{G}}\def\Gtil{{\widetilde G}}
+\def\hbG{{\widehat{\bG}}}\def\tbG{{\widetilde{\bG}}}\def\Gbar{{\overline G}}
+
+\def\bh{\mathbold{h}}\def\hhat{\widehat{h}}\def\htil{\widetilde{h}}
+\def\hbh{{\widehat{\bh}}}\def\tbh{{\widetilde{\bh}}}
+\def\bH{\mathbold{H}}\def\calH{{\cal H}}\def\scrH{{\mathscr H}}\def\Hhat{\widehat{H}}\def\Htil{{\widetilde H}}
+\def\hbH{{\widehat{\bH}}}\def\tbH{{\widetilde{\bH}}}\def\Hbar{{\overline H}}
+
+\def\bi{\mathbold{i}}\def\ihat{\widehat{i}}\def\itil{\widetilde{i}}\def\ibar{{\overline i}}
+\def\hbi{{\widehat{\bi}}}\def\tbi{{\widetilde{\bi}}}
+\def\bI{\mathbold{I}}\def\hbI{{\widehat{\bI}}}\def\tbI{{\widetilde{\bI}}}
+\def\calI{{\cal I}}\def\scrI{{\mathscr I}}\def\Ihat{\widehat{I}}\def\Itil{{\widetilde I}}\def\Ibar{{\overline I}}
+
+\def\bj{\mathbold{j}}\def\jhat{\widehat{j}}\def\jtil{\widetilde{j}}\def\jbar{{\overline j}}
+\def\hbj{{\widehat{\bj}}}\def\tbj{{\widetilde{\bj}}}
+\def\bJ{\mathbold{J}}\def\hbJ{{\widehat{\bJ}}}\def\tbJ{{\widetilde{\bJ}}}
+\def\calJ{{\cal J}}\def\scrJ{{\mathscr J}}\def\Jhat{\widehat{J}}\def\Jtil{{\widetilde J}}\def\Jbar{{\overline J}}
+
+\def\bk{\mathbold{k}}\def\khat{\widehat{k}}\def\ktil{\widetilde{k}}\def\kbar{{\overline k}}
+\def\hbk{{\widehat{\bk}}}\def\tbk{{\widetilde{\bk}}}
+\def\bK{\mathbold{K}}\def\hbK{{\widehat{\bK}}}\def\tbK{{\widetilde{\bK}}}
+\def\calK{{\cal K}}\def\scrK{{\mathscr K}}\def\Khat{\widehat{K}}\def\Ktil{{\widetilde K}}\def\Kbar{{\overline K}}
+
+\def\bell{\mathbold{\ell}}\def\ellhat{\widehat{\ell}}\def\elltil{\widetilde{\ell}}\def\ellbar{{\overline \ell}}
+\def\hbell{{\widehat{\bell}}}\def\tbell{{\widetilde{\bell}}}
+\def\bL{\mathbold{L}}\def\hbL{{\widehat{\bL}}}\def\tbL{{\widetilde{\bL}}}
+\def\calL{{\cal L}}\def\scrL{{\mathscr L}}\def\Lhat{\widehat{L}}\def\Ltil{{\widetilde L}}\def\Lbar{{\overline L}}
+
+\def\bm{\mathbold{m}}\def\mhat{\widehat{m}}\def\mtil{\widetilde{m}}\def\mbar{{\overline m}}
+\def\hbm{{\widehat{\bm}}}\def\tbm{{\widetilde{\bm}}}
+\def\bM{\mathbold{M}}\def\hbM{{\widehat{\bM}}}\def\tbM{{\widetilde{\bM}}}
+\def\calM{{\cal M}}\def\scrM{{\mathscr M}}\def\Mhat{\widehat{M}}\def\Mtil{{\widetilde M}}\def\Mbar{{\overline M}}
+
+\def\bn{\mathbold{n}}\def\nhat{\widehat{n}}\def\ntil{\widetilde{n}}\def\nbar{{\overline n}}
+\def\hbn{{\widehat{\bn}}}\def\tbn{{\widetilde{\bn}}}
+\def\bN{\mathbold{N}}\def\hbN{{\widehat{\bN}}}\def\tbN{{\widetilde{\bN}}}
+\def\calN{{\cal N}}\def\scrN{{\mathscr N}}\def\Nhat{\widehat{N}}\def\Ntil{{\widetilde N}}\def\Nbar{{\overline N}}
+
+\def\bo{\mathbold{o}}\def\ohat{\widehat{o}}\def\otil{\widetilde{o}}\def\obar{{\overline o}}
+\def\hbo{{\widehat{\bo}}}\def\tbo{{\widetilde{\bo}}}
+\def\bO{\mathbold{O}}\def\hbO{{\widehat{\bO}}}\def\tbO{{\widetilde{\bO}}}
+\def\calO{{\cal O}}\def\scrO{{\mathscr O}}\def\Ohat{\widehat{O}}\def\Otil{{\widetilde O}}\def\Obar{{\overline O}}
+
+\def\bp{\mathbold{p}}\def\phat{\widehat{p}}\def\ptil{\widetilde{p}}\def\pbar{{\overline p}}
+\def\hbp{{\widehat{\bp}}}\def\tbp{{\widetilde{\bp}}}
+\def\bP{\mathbold{P}}\def\hbP{{\widehat{\bP}}}\def\tbP{{\widetilde{\bP}}}
+\def\calP{{\cal P}}\def\scrP{{\mathscr P}}\def\Phat{\widehat{P}}\def\Ptil{{\widetilde P}}\def\Pbar{{\overline P}}
+
+\def\bq{\mathbold{q}}\def\qhat{\widehat{q}}\def\qtil{\widetilde{q}}\def\qbar{{\overline q}}
+\def\hbq{{\widehat{\bq}}}\def\tbq{{\widetilde{\bq}}}
+\def\bQ{\mathbold{Q}}\def\hbQ{{\widehat{\bQ}}}\def\tbQ{{\widetilde{\bQ}}}
+\def\calQ{{\cal Q}}\def\scrQ{{\mathscr Q}}\def\Qhat{\widehat{Q}}\def\Qtil{{\widetilde Q}}\def\Qbar{{\overline Q}}
+
+\def\br{\mathbold{r}}\def\rhat{\widehat{r}}\def\rtil{\widetilde{r}}\def\rbar{{\overline r}}
+\def\hbr{{\widehat{\br}}}\def\tbr{{\widetilde{\br}}}
+\def\bR{\mathbold{R}}\def\hbR{{\widehat{\bR}}}\def\tbR{{\widetilde{\bR}}}
+\def\calR{{\cal R}}\def\scrR{{\mathscr R}}\def\Rhat{\widehat{R}}\def\Rtil{{\widetilde R}}\def\Rbar{{\overline R}}
+
+\def\bs{\mathbold{s}}\def\shat{\widehat{s}}\def\stil{\widetilde{s}}\def\sbar{{\overline s}}
+\def\hbs{{\widehat{\bs}}}\def\tbs{{\widetilde{\bs}}}
+\def\bS{\mathbold{S}}\def\hbS{{\widehat{\bS}}}\def\tbS{{\widetilde{\bS}}}
+\def\calS{{\cal S}}\def\scrS{{\mathscr S}}\def\Shat{\widehat{S}}\def\Stil{{\widetilde S}}\def\Sbar{{\overline S}}
+
+\def\bt{\mathbold{t}}\def\that{\widehat{t}}\def\ttil{\widetilde{t}}\def\tbar{{\overline t}}
+\def\hbt{{\widehat{\bt}}}\def\tbt{{\widetilde{\bt}}}
+\def\bT{\mathbold{T}}\def\hbT{{\widehat{\bT}}}\def\tbT{{\widetilde{\bT}}}
+\def\calT{{\cal T}}\def\scrT{{\mathscr T}}\def\That{\widehat{T}}\def\Ttil{{\widetilde T}}\def\Tbar{{\overline T}}
+
+\def\bu{\mathbold{u}}\def\uhat{\widehat{u}}\def\util{\widetilde{u}}\def\ubar{{\overline u}}
+\def\hbu{{\widehat{\bu}}}\def\tbu{{\widetilde{\bu}}}
+\def\bU{\mathbold{U}}\def\hbU{{\widehat{\bU}}}\def\tbU{{\widetilde{\bU}}}
+\def\calU{{\cal U}}\def\scrU{{\mathscr U}}\def\Uhat{\widehat{U}}\def\Util{{\widetilde U}}\def\Ubar{{\overline U}}
+
+\def\bv{\mathbold{v}}\def\vhat{\widehat{v}}\def\vtil{\widetilde{v}}\def\vbar{{\overline v}}
+\def\hbv{{\widehat{\bv}}}\def\tbv{{\widetilde{\bv}}}
+\def\bV{\mathbold{V}}\def\hbV{{\widehat{\bV}}}\def\tbV{{\widetilde{\bV}}}
+\def\calV{{\cal V}}\def\scrV{{\mathscr V}}\def\Vhat{\widehat{V}}\def\Vtil{{\widetilde V}}\def\Vbar{{\overline V}}
+
+\def\bw{\mathbold{w}}\def\what{\widehat{w}}\def\wtil{\widetilde{w}}\def\wbar{{\overline w}}
+\def\hbw{{\widehat{\bw}}}\def\tbw{{\widetilde{\bw}}}
+\def\bW{\mathbold{W}}\def\hbW{{\widehat{\bW}}}\def\tbW{{\widetilde{\bW}}}
+\def\calW{{\cal W}}\def\scrW{{\mathscr W}}\def\What{\widehat{W}}\def\Wtil{{\widetilde W}}\def\Wbar{{\overline W}}
+
+\def\bx{\mathbold{x}}\def\xhat{\widehat{x}}\def\xtil{\widetilde{x}}\def\xbar{{\overline x}}\def\vbx{{\bf x}}
+\def\hbx{{\widehat{\bx}}}\def\tbx{{\widetilde{\bx}}}\def\bxbar{{\overline \bx}}
+\def\bX{\mathbold{X}}\def\hbX{{\widehat{\bX}}}\def\tbX{{\widetilde{\bX}}}\def\bXbar{{\overline \bX}}
+\def\calX{{\cal X}}\def\scrX{{\mathscr X}}\def\Xhat{\widehat{X}}\def\Xtil{{\widetilde X}}\def\Xbar{{\overline X}}
+
+\def\by{\mathbold{y}}\def\yhat{\widehat{y}}\def\ytil{\widetilde{y}}\def\ybar{{\overline y}}\def\vby{{\bf y}}
+\def\hby{{\widehat{\by}}}\def\tby{{\widetilde{\by}}}
+\def\bY{\mathbold{Y}}\def\hbY{{\widehat{\bY}}}\def\tbY{{\widetilde{\bY}}}
+\def\calY{{\cal Y}}\def\scrY{{\mathscr Y}}\def\Yhat{\widehat{Y}}\def\Ytil{{\widetilde Y}}\def\Ybar{{\overline Y}}
+
+\def\bz{\mathbold{z}}\def\zhat{\widehat{z}}\def\ztil{\widetilde{z}}\def\zbar{{\overline z}}
+\def\hbz{{\widehat{\bz}}}\def\tbz{{\widetilde{\bz}}}
+\def\bZ{\mathbold{Z}}\def\hbZ{{\widehat{\bZ}}}\def\tbZ{{\widetilde{\bZ}}}
+\def\calZ{{\cal Z}}\def\scrZ{{\mathscr Z}}\def\Zhat{\widehat{Z}}\def\Ztil{{\widetilde Z}}\def\Zbar{{\overline Z}}
+
+%%% Greek
+\def\balpha{\mathbold{\alpha}}\def\alphahat{\widehat{\alpha}}\def\halpha{\widehat{\alpha}}
+\def\alphatil{\widetilde{\alpha}}\def\talpha{\widetilde{\alpha}}\def\alphabar{{\overline{\alpha}}}
+\def\hbalpha{{\widehat{\balpha}}}\def\tbalpha{{\widetilde{\balpha}}}
+
+\def\bbeta{\mathbold{\beta}}\def\betahat{\widehat{\beta}}\def\hbeta{\widehat{\beta}}
+\def\betatil{\widetilde{\beta}}\def\tbeta{\widetilde{\beta}}\def\betabar{{\overline{\beta}}}
+\def\hbbeta{{\widehat{\bbeta}}}\def\tbbeta{{\widetilde{\bbeta}}}
+
+\def\bgamma{\mathbold{\gamma}}\def\gammahat{\widehat{\gamma}}\def\hgamma{\widehat{\gamma}}
+\def\gammatil{\widetilde{\gamma}}\def\tgamma{\widetilde{\gamma}}\def\gammabar{{\overline{\gamma}}}
+\def\hbgamma{{\widehat{\bgamma}}}\def\tbgamma{{\widetilde{\bgamma}}}
+
+\def\bGamma{\mathbold{\Gamma}}\def\hbGamma{{\widehat{\bGamma}}}
+\def\tbGamma{{\widetilde{\bGamma}}}\def\calGamma{{\cal \Gamma}}
+\def\scrGamma{{\mathscr \Gamma}}\def\Gammahat{\widehat{\Gamma}}
+\def\Gammatil{{\widetilde \Gamma}}\def\Gammabar{{\overline \Gamma}}
+
+\def\bdelta{\mathbold{\delta}}\def\deltahat{\widehat{\delta}}\def\hdelta{\widehat{\delta}}
+\def\deltatil{\widetilde{\delta}}\def\tdelta{\widetilde{\delta}}\def\deltabar{{\overline{\delta}}}
+\def\hbdelta{{\widehat{\bdelta}}}\def\tbdelta{{\widetilde{\bdelta}}}
+
+\def\bDelta{\mathbold{\Delta}}\def\hbDelta{{\widehat{\bDelta}}}
+\def\tbDelta{{\widetilde{\bDelta}}}\def\calDelta{{\cal \Delta}}
+\def\scrDelta{{\mathscr \Delta}}\def\Deltahat{\widehat{\Delta}}
+\def\Deltatil{{\widetilde \Delta}}\def\Deltabar{{\overline \Delta}}
+
+\def\ep{\varepsilon}\def\eps{\epsilon}\def\veps{\varepsilon}
+\def\bep{\mathbold{\ep}}\def\ephat{\widehat{\ep}}\def\hep{\widehat{\ep}}
+\def\eptil{\widetilde{\ep}}\def\tep{\widetilde{\ep}}\def\epbar{{\overline{\ep}}}
+\def\hbep{{\widehat{\bep}}}\def\tbep{{\widetilde{\bep}}}
+
+\def\bzeta{\mathbold{\zeta}}\def\zetahat{\widehat{\zeta}}\def\hzeta{\widehat{\zeta}}
+\def\zetatil{\widetilde{\zeta}}\def\tzeta{\widetilde{\zeta}}\def\zetabar{{\overline{\zeta}}}
+\def\hbzeta{{\widehat{\bzeta}}}\def\tbzeta{{\widetilde{\bzeta}}}
+
+\def\bfeta{\mathbold{\eta}}\def\etahat{\widehat{\eta}}\def\heta{\widehat{\eta}}
+\def\etatil{\widetilde{\eta}}\def\teta{\widetilde{\eta}}\def\etabar{{\overline{\eta}}}
+\def\hbfeta{{\widehat{\bfeta}}}\def\tbfeta{{\widetilde{\bfeta}}}
+
+\def\btheta{\mathbold{\theta}}\def\thetahat{\widehat{\theta}}\def\htheta{\widehat{\theta}}
+\def\thetatil{\widetilde{\theta}}\def\ttheta{\widetilde{\theta}}\def\thetabar{{\overline{\theta}}}
+\def\hbtheta{{\widehat{\btheta}}}\def\tbtheta{{\widetilde{\btheta}}}
+
+\def\bTheta{\mathbold{\Theta}}\def\hbTheta{{\widehat{\bTheta}}}
+\def\tbTheta{{\widetilde{\bTheta}}}\def\calTheta{{\cal \Theta}}
+\def\scrTheta{{\mathscr \Theta}}\def\Thetahat{\widehat{\Theta}}
+\def\Thetatil{{\widetilde \Theta}}\def\Thetabar{{\overline \Theta}}
+
+\def\hhbTheta{{\widehat{\hbTheta}}}\def\hhTheta{{\widehat{\Thetahat}}}
+\def\hhbSigma{{\widehat{\hbSigma}}}\def\hhSigma{{\widehat{\Sigmahat}}}
+
+\def\bkappa{\mathbold{\kappa}}\def\kappahat{\widehat{\kappa}}\def\hkappa{\widehat{\kappa}}
+\def\kappatil{\widetilde{\kappa}}\def\tkappa{\widetilde{\kappa}}\def\kappabar{{\overline{\kappa}}}
+\def\hbkappa{{\widehat{\bkappa}}}\def\tbkappa{{\widetilde{\bkappa}}}
+
+\def\lam{\lambda}
+\def\blam{\mathbold{\lam}}\def\lamhat{\widehat{\lam}}\def\hlam{\widehat{\lam}}
+\def\lamtil{\widetilde{\lam}}\def\tlam{\widetilde{\lam}}\def\lambar{{\overline{\lam}}}
+\def\hblam{{\widehat{\blam}}}\def\tblam{{\widetilde{\blam}}}
+
+\def\blambda{\mathbold{\lambda}}\def\lambdahat{\widehat{\lambda}}\def\hlambda{\widehat{\lambda}}
+\def\lambdatil{\widetilde{\lambda}}\def\tlambda{\widetilde{\lambda}}\def\lambdabar{{\overline{\lambda}}}
+\def\hblambda{{\widehat{\blambda}}}\def\tblambda{{\widetilde{\blambda}}}
+
+\def\bLambda{\mathbold{\Lambda}}\def\hbLambda{{\widehat{\bLambda}}}
+\def\tbLambda{{\widetilde{\bLambda}}}\def\calLambda{{\cal \Lambda}}
+\def\scrLambda{{\mathscr \Lambda}}\def\Lambdahat{\widehat{\Lambda}}
+\def\Lambdatil{{\widetilde \Lambda}}\def\Lambdabar{{\overline \Lambda}}
+
+\def\bmu{\mathbold{\mu}}\def\muhat{\widehat{\mu}}\def\hmu{\widehat{\mu}}
+\def\mutil{\widetilde{\mu}}\def\tmu{\widetilde{\mu}}\def\mubar{{\overline{\mu}}}
+\def\hbmu{{\widehat{\bmu}}}\def\tbmu{{\widetilde{\bmu}}}
+
+\def\bnu{\mathbold{\nu}}\def\nuhat{\widehat{\nu}}\def\hnu{\widehat{\nu}}
+\def\nutil{\widetilde{\nu}}\def\tnu{\widetilde{\nu}}\def\nubar{{\overline{\nu}}}
+\def\hbnu{{\widehat{\bnu}}}\def\tbnu{{\widetilde{\bnu}}}
+
+\def\bxi{\mathbold{\xi}}\def\xihat{\widehat{\xi}}\def\hxi{\widehat{\xi}}
+\def\xitil{\widetilde{\xi}}\def\txi{\widetilde{\xi}}\def\xibar{{\overline{\xi}}}
+\def\hbxi{{\widehat{\bxi}}}\def\tbxi{{\widetilde{\bxi}}}
+
+\def\bXi{\mathbold{\Xi}}\def\hbXi{{\widehat{\bXi}}}
+\def\tbXi{{\widetilde{\bXi}}}\def\calXi{{\cal \Xi}}
+\def\scrXi{{\mathscr \Xi}}\def\Xihat{\widehat{\Xi}}
+\def\Xitil{{\widetilde \Xi}}\def\Xibar{{\overline \Xi}}
+
+\def\bpi{\mathbold{\pi}}\def\pihat{\widehat{\pi}}\def\hpi{\widehat{\pi}}
+\def\pitil{\widetilde{\pi}}\def\tpi{\widetilde{\pi}}\def\pibar{{\overline{\pi}}}
+\def\hbpi{{\widehat{\bpi}}}\def\tbpi{{\widetilde{\bpi}}}
+
+\def\bPi{\mathbold{\Pi}}\def\hbPi{{\widehat{\bPi}}}
+\def\tbPi{{\widetilde{\bPi}}}\def\calPi{{\cal \Pi}}
+\def\scrPi{{\mathscr \Pi}}\def\Pihat{\widehat{\Pi}}
+\def\Pitil{{\widetilde \Pi}}\def\Pibar{{\overline \Pi}}
+
+\def\brho{\mathbold{\rho}}\def\rhohat{\widehat{\rho}}\def\hrho{\widehat{\rho}}
+\def\rhotil{\widetilde{\rho}}\def\trho{\widetilde{\rho}}\def\rhobar{{\overline{\rho}}}
+\def\hbrho{{\widehat{\brho}}}\def\tbrho{{\widetilde{\brho}}}
+\def\hhrho{{\widehat{\widehat\rho}}}
+
+\def\bsigma{\mathbold{\sigma}}\def\sigmahat{\widehat{\sigma}}\def\hsigma{\widehat{\sigma}}
+\def\sigmatil{\widetilde{\sigma}}\def\tsigma{\widetilde{\sigma}}\def\sigmabar{{\overline{\sigma}}}
+\def\hbsigma{{\widehat{\bsigma}}}\def\tbsigma{{\widetilde{\bsigma}}}
+\def\hhsigma{{\widehat{\widehat\sigma}}}
+
+\def\bSigma{\mathbold{\Sigma}}\def\hbSigma{{\widehat{\bSigma}}}
+\def\tbSigma{{\widetilde{\bSigma}}}\def\calSigma{{\cal \Sigma}}
+\def\scrSigma{{\mathscr \Sigma}}\def\Sigmahat{\widehat{\Sigma}}
+\def\Sigmatil{{\widetilde \Sigma}}\def\Sigmabar{{\overline \Sigma}}
+
+\def\btau{\mathbold{\tau}}\def\tauhat{\widehat{\tau}}\def\htau{\widehat{\tau}}
+\def\tautil{\widetilde{\tau}}\def\ttau{\widetilde{\tau}}\def\taubar{{\overline{\tau}}}
+\def\hbtau{{\widehat{\btau}}}\def\tbtau{{\widetilde{\btau}}}
+
+\def\bphi{\mathbold{\phi}}\def\phihat{\widehat{\phi}}\def\hphi{\widehat{\phi}}
+\def\phitil{\widetilde{\phi}}\def\tphi{\widetilde{\phi}}\def\phibar{{\overline{\phi}}}
+\def\hbphi{{\widehat{\bphi}}}\def\tbphi{{\widetilde{\bphi}}}
+
+\def\bPhi{\mathbold{\Phi}}\def\hbPhi{{\widehat{\bPhi}}}
+\def\tbPhi{{\widetilde{\bPhi}}}\def\calPhi{{\cal \Phi}}
+\def\scrPhi{{\mathscr \Phi}}\def\Phihat{\widehat{\Phi}}
+\def\Phitil{{\widetilde \Phi}}\def\Phibar{{\overline \Phi}}
+
+\def\bchi{\mathbold{\chi}}\def\chihat{\widehat{\chi}}\def\hchi{\widehat{\chi}}
+\def\chitil{\widetilde{\chi}}\def\tchi{\widetilde{\chi}}\def\chibar{{\overline{\chi}}}
+\def\hbchi{{\widehat{\bchi}}}\def\tbchi{{\widetilde{\bchi}}}
+
+\def\bpsi{\mathbold{\psi}}\def\psihat{\widehat{\psi}}\def\hpsi{\widehat{\psi}}
+\def\psitil{\widetilde{\psi}}\def\tpsi{\widetilde{\psi}}\def\psibar{{\overline{\psi}}}
+\def\hbpsi{{\widehat{\bpsi}}}\def\tbpsi{{\widetilde{\bpsi}}}
+
+\def\bPsi{\mathbold{\Psi}}\def\hbPsi{{\widehat{\bPsi}}}
+\def\tbPsi{{\widetilde{\bPsi}}}\def\calPsi{{\cal \Psi}}
+\def\scrPsi{{\mathscr \Psi}}\def\Psihat{\widehat{\Psi}}
+\def\Psitil{{\widetilde \Psi}}\def\Psibar{{\overline \Psi}}
+
+\def\bomega{\mathbold{\omega}}\def\omegahat{\widehat{\omega}}\def\homega{\widehat{\omega}}
+\def\omegatil{\widetilde{\omega}}\def\tomega{\widetilde{\omega}}\def\omegabar{{\overline{\omega}}}
+\def\hbomega{{\widehat{\bomega}}}\def\tbomega{{\widetilde{\bomega}}}
+
+\def\bOmega{\mathbold{\Omega}}\def\hbOmega{{\widehat{\bOmega}}}
+\def\tbOmega{{\widetilde{\bOmega}}}\def\calOmega{{\cal \Omega}}
+\def\scrOmega{{\mathscr \Omega}}\def\Omegahat{\widehat{\Omega}}
+\def\Omegatil{{\widetilde \Omega}}\def\Omegabar{{\overline \Omega}}
+
+
+
+

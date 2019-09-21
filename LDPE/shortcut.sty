@@ -1,0 +1,145 @@
+\usepackage{hyperref}
+
+\usepackage{amsmath,amssymb,enumerate}
+\usepackage{fontspec}
+\usepackage{xunicode}
+\usepackage{xcolor}
+\usepackage{xltxtra}
+\usepackage[export]{adjustbox}
+\usepackage{mathrsfs}
+\usepackage{subcaption}
+\usepackage{wrapfig}
+\usepackage{tikz}
+\usepackage{multirow}
+\usepackage{lmodern}
+\usepackage{booktabs}
+
+\setbeamertemplate{caption}[numbered]
+\newtheorem{condition}{Condition}
+\newtheorem{proposition}{Proposition}
+
+\usecolortheme{mit}
+\setromanfont[Path= ./fonts/, Mapping={tex-text}]{EBGaramond-Regular.ttf}
+\setsansfont[Path = ./fonts/, Mapping=tex-text]{EBGaramond-Regular.ttf}
+\usetheme{berlinn}
+
+\setbeameroption{hide notes}
+
+\makeatletter
+
+\newcommand{\aphi}{\phi}
+\newcommand{\ba}{\mbox{\bf a}}
+\newcommand{\bb}{\mbox{\bf b}}
+\newcommand{\be}{\mbox{\bf e}}
+\newcommand{\bff}{\mbox{\bf f}}
+\newcommand{\bg}{\mbox{\bf g}}
+\newcommand{\bh}{\mbox{\bf h}}
+\newcommand{\bq}{\mbox{\bf q}}
+\newcommand{\br}{\mbox{\bf r}}
+\newcommand{\bu}{\mbox{\bf u}}
+\newcommand{\bv}{\mbox{\bf v}}
+\newcommand{\bw}{\mbox{\bf w}}
+\newcommand{\bx}{\mbox{\bf x}}
+\newcommand{\by}{\mbox{\bf y}}
+\newcommand{\bz}{\mbox{\bf z}}
+\newcommand{\bA}{\mbox{\bf A}}
+\newcommand{\bB}{\mbox{\bf B}}
+\newcommand{\bC}{\mbox{\bf C}}
+\newcommand{\bc}{\mbox{\bf c}}
+\newcommand{\bD}{\mbox{\bf D}}
+\newcommand{\bE}{\mbox{\bf E}}
+\newcommand{\bF}{\mbox{\bf F}}
+\newcommand{\bG}{\mbox{\bf G}}
+\newcommand{\bH}{\mbox{\bf H}}
+\newcommand{\bK}{\mbox{\bf K}}
+\newcommand{\bI}{\mbox{\bf I}}
+\newcommand{\bt}{\mbox{\bf t}}
+\newcommand{\bL}{\mbox{\bf L}}
+\newcommand{\bQ}{\mbox{\bf Q}}
+\newcommand{\bR}{\mbox{\bf R}}
+\newcommand{\bS}{\mbox{\bf S}}
+\newcommand{\bU}{\mbox{\bf U}}
+\newcommand{\bm}{\mbox{\bf m}}
+\newcommand{\bM}{\mbox{\bf M}}
+\newcommand{\bV}{\mbox{\bf V}}
+\newcommand{\bW}{\mbox{\bf W}}
+\newcommand{\bX}{\mbox{\bf X}}
+\newcommand{\bXM}{\mbox{\bf X}_{\widehat{\mathcal{M}}}}
+\newcommand{\bY}{\mbox{\bf Y}}
+\newcommand{\bZ}{\mbox{\bf Z}}
+\newcommand{\bone}{\mbox{\bf 1}}
+\newcommand{\bzero}{\mbox{\bf 0}}
+\newcommand{\bveps}{\mbox{\boldmath $\varepsilon$}}
+\newcommand{\balpha}{\mbox{\boldmath $\alpha$}}
+\newcommand{\bdelta}{\mbox{\boldmath $\delta$}}
+\newcommand{\bbeta}{\mbox{\boldmath $\beta$}}
+\newcommand{\btheta}{\mbox{\boldmath $\theta$}}
+\newcommand{\brho}{\mbox{\boldmath $\rho$}}
+\newcommand{\bet}{\mbox{\boldmath $\eta$}}
+\newcommand{\bxi}{\mbox{\boldmath $\xi$}}
+\newcommand{\bleta}{\mbox{\boldmath $\eta$}}
+\newcommand{\bmu}{\mbox{\boldmath $\mu$}}
+\newcommand{\bSig}{\mbox{\boldmath $\Sigma$}}
+\newcommand{\bzeta}{\mbox{\boldmath $\zeta$}}
+\newcommand{\bomega}{\mbox{\boldmath $\omega$}}
+\newcommand{\MSE}{\mbox{MSE}}
+\newcommand{\what}{\widehat}
+\newcommand{\hB}{\widehat \bB}
+\newcommand{\hE}{\widehat \bE}
+\newcommand{\hvar}{\widehat \var}
+\newcommand{\hcov}{\widehat \cov}
+\newcommand{\hbveps}{\widehat\bveps}
+\newcommand{\hbbeta}{\widehat\bbeta}
+\newcommand{\hbeta}{\widehat\beta}
+\newcommand{\hbtheta}{\widehat\btheta}
+\newcommand{\hbgamma}{\widehat\bgamma}
+\newcommand{\bGamma}{\mbox{\boldmath $\Gamma$}}
+\newcommand{\hSig}{\widehat\Sig}
+\newcommand{\hmu}{\widehat\bmu}
+\newcommand{\hxi}{\widehat\bxi}
+\newcommand{\tSig}{\widetilde\Sig}
+\newcommand{\heq}{\ \widehat=\ }
+\newcommand{\sam}{_{\text{sam}}}
+
+\newcommand{\FS}{\text{FS}}
+
+\newcommand{\bbE}{\mathbb{E}}
+\newcommand{\tbbE}{\widetilde{\mathbb{E}}}
+\newcommand{\bbP}{\mathbb{P}}
+\newcommand{\tbbP}{\widetilde{\mathbb{P}}}
+\newcommand{\spaceF}{\mathcal{F}}
+\newcommand{\spaceP}{\mathcal{P}}
+\newcommand{\std}{\mathrm{std}}
+\newcommand{\var}{\mathrm{var}}
+\newcommand{\cov}{\mathrm{cov}}
+\newcommand{\corr}{\mathrm{corr}}
+\newcommand{\Sig}{\mathbf{\Sigma}}
+\newcommand{\veps}{\varepsilon}
+\newcommand{\tr}{\mathrm{tr}}
+\newcommand{\diag}{\mathrm{diag}}
+\newcommand{\vecc}{\mathrm{vec}}
+\newcommand{\vech}{\mathrm{vech}}
+\newcommand{\rank}{\mathrm{rank}}
+\newcommand{\sgn}{\mathrm{sgn}}
+\newcommand{\supp}{\mathrm{supp}}
+\newcommand{\opt}{\mathrm{opt}}
+\newcommand{\spa}{\mathrm{span}}
+\newcommand{\sirscore}{\mathrm{sirscore}}
+\newcommand{\sirsmain}{\mathrm{sirsmain}}
+\newcommand{\sirsmod}{\mathrm{sirsmod}}
+\newcommand{\sirs}{\mathrm{sirs}}
+\newcommand{\sirscorea}{\mathrm{SIRScore_a}}
+\newcommand{\sirsmaina}{\mathrm{SIRSmain_a}}
+\newcommand{\sirsmoda}{\mathrm{SIRSmod_a}}
+\newcommand{\sirsa}{\mathrm{SIRS_a}}
+\newcommand{\argmin}{\mathrm{argmin}}
+\newcommand{\bOme}{\mathbf{\Omega}}
+\def\t{^T}
+\def\toD{\overset{\text{D}}{\longrightarrow}}
+\def\toP{\overset{\text{P}}{\longrightarrow}}
+\def\toas{\overset{\text{a.s.}}{\longrightarrow}}
+\def\tostable{\overset{\mathcal{L}_-(s)}{\longrightarrow}}
+\def\beqn{\begin{eqnarray}}
+\def\eeqn{\end{eqnarray}}
+\def\beqns{\begin{eqnarray*}}
+\def\eeqns{\end{eqnarray*}}

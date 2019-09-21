@@ -1,0 +1,68 @@
+\section{Introduction}
+\begin{frame}
+\sectionpage
+\end{frame}
+
+
+%----------------------------------------------------------------------------------------
+%	PAGE 4
+%----------------------------------------------------------------------------------------
+\begin{frame}
+\frametitle{Background}
+In high-dimensional statistics, much work has been made on consistency for prediction, estimation of high-dimensional objects or variable selection.
+\begin{block}{Regularized linear regression}
+  \begin{itemize}
+  \item[$\blacktriangleright$] $\ell_{1}$ regularized methods
+  \item[$\blacktriangleright$] non-convex penalized methods
+  \item[$\blacktriangleright$] greedy methods
+  \item[$\blacktriangleright$] screening methods
+  \ldots
+  \end{itemize}
+\end{block}
+\end{frame}
+
+%----------------------------------------------------------------------------------------
+%	PAGE Related Word
+%----------------------------------------------------------------------------------------
+\begin{frame}{Related work}
+  Some related works have concerned with statistics inference:
+  \begin{itemize}
+    \item[$\blacksquare$] Knight and Fu(2000): Lasso type estimators cannot obtain a proper asymptotics distribution of unknown cofficients, even in low-dim situation. 
+    \item[$\blacksquare$] Leeb and Potscher(2006): Consistent estimation of the distribution
+    of the least squares estimator after model selection is impossible.
+    \item[$\blacksquare$] Berk et.al(2010); Laber and Murphy(2011): Conservative statistical inference after model selection may not yield accurate confidence regions or p-values when $p$ is large. 
+  \end{itemize}
+\end{frame}
+
+
+%----------------------------------------------------------------------------------------
+%	PAGE 5
+%----------------------------------------------------------------------------------------
+\begin{frame}
+% \frametitle{Uniform signal strength condition}
+\small
+
+\begin{block}{Uniform signal strength condition}
+  Existing variable selection approaches based on selection consistency theory typically requires a {\bf uniform signal strength condition}:
+  \begin{equation}
+  \label{ussc}
+  \hbox{$\min_{\beta_j\neq 0}$} |\beta_j| \ge C\sigma\sqrt{(2/n)\log p},\ C>1/2,
+  \end{equation}    
+\end{block}
+
+\end{frame}
+
+%----------------------------------------------------------------------------------------
+%	PAGE OLS
+%----------------------------------------------------------------------------------------
+\begin{frame}{Advantages of OLS in low-dim}
+  Linear model in low dimensions ($p<n$): 
+  \begin{equation*}
+    y = X\bbeta + \epsilon,\quad \epsilon \sim N(0, \sigma^2 I).
+  \end{equation*}
+  We get the estimator of $\bbeta$, $\hat\bbeta = (X'X)^{-1} X' y$ with explict form of covariance structure as following
+  \begin{equation*}
+    cov(c' \hat\bbeta, d' \hat\bbeta) = \sigma^2 c' (X'X)^- d .
+  \end{equation*}
+  and the \emph{confidence interval}, page 129. 
+\end{frame}

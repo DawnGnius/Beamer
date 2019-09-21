@@ -1,0 +1,11 @@
+\frametitle{Math}
+
+
+Here is an example of using LaTeX's excellent math rendering:
+\begin{equation}
+e^{\pi i} = -1
+\end{equation}
+Time for some quantum mechanics:
+\begin{equation}
+i\hbar\frac{\partial}{\partial t} \Psi(\mathbf{r},\,t) = -\frac{\hbar^2}{2m}\nabla^2\Psi(\mathbf{r},\,t) + V(\mathbf{r})\Psi(\mathbf{r},\,t)
+\end{equation}

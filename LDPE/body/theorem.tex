@@ -1,0 +1,253 @@
+%----------------------------------------------------------------------------------------
+%	PAGE 22
+%----------------------------------------------------------------------------------------
+\section{Important theoretical results}
+\begin{frame}
+
+\sectionpage
+\end{frame}
+
+%----------------------------------------------------------------------------------------
+%	PAGE 3.1 24
+%----------------------------------------------------------------------------------------
+\begin{frame}
+\begin{block}{Conditions}
+\scriptsize
+Let $\lambda_{univ}=\sqrt{(2/n)\log p}$. Suppose the model (\ref{LM}) holds with a vector $\bbeta$ satisfying the following capped-$\ell_1$ sparsity condition:
+%\vspace{1mm}
+\begin{equation}
+\label{con19}
+\setlength{\abovedisplayskip}{3pt} %%% 3pt 个人觉得稍妥，可自行设置
+\setlength{\belowdisplayskip}{3pt}
+\sum_{j=1}^p \min\big\{|\beta_j|/(\sigma \lambda_{univ}),1\big\} \leq s.
+\end{equation}
+This condition holds if $\bbeta$ is $\ell_0$ sparse with $\|\bbeta\|_0 \leq s$ or $\ell_q$ sparse with $\|\bbeta\|_q^q/(\sigma\lambda_{univ})^q \leq s$, $0<q \leq 1$.
+Let $\sigma^*=\|\varepsilon\|_2/\sqrt{n}$. A generic condition we impose on the initial estimator is
+%\vspace{1mm}
+\begin{equation}
+\label{con20}
+\setlength{\abovedisplayskip}{3pt} %%% 3pt 个人觉得稍妥，可自行设置
+\setlength{\belowdisplayskip}{3pt}
+P\Big\{ \|\hat{\bbeta}^{(init)} - \bbeta\|_1 \geq C_1 s \sigma^*\sqrt{(2/n)\log(p/\epsilon)}\Big\} \leq \epsilon
+\end{equation}
+for a certain fixed constant $C_1$ and all $\alpha_0/p^2 \leq \epsilon \leq 1$,
+where $\alpha_0\in (0,1)$ is a preassigned constant.
+We also impose a similar generic condition on an estimator $\hat{\sigma}$ for the noise level:
+%\vspace{1mm}
+\begin{equation}
+\setlength{\abovedisplayskip}{3pt} %%% 3pt 个人觉得稍妥，可自行设置
+\setlength{\belowdisplayskip}{3pt}
+\label{con21}
+P\Big\{ |\hat{\sigma}/\sigma^* - 1 | \geq C_2 s (2/n)\log(p/\epsilon) \Big\} \leq \epsilon, \forall \alpha_0/p^2 \leq \epsilon \leq 1,
+\end{equation}
+with a fixed $C_2$.
+%We use the same $\eps$ in (\ref{ell_1-err-bd}) and (\ref{sigma-err-bd}) without much loss of generality.
+\end{block}
+\end{frame}
+
+
+%----------------------------------------------------------------------------------------
+%	PAGE 3.1 25
+%----------------------------------------------------------------------------------------
+\begin{frame}%[allowframebreaks]
+\begin{block}{Theorem 1}
+%\label{th1}
+\scriptsize
+Let $\hat{\beta}_j$ be the LDPE with an initial estimator $\hat{\bbeta}^{(init)}$.
+%Let $\eta_j=\max_{k\neq j}|\bx_k^T\bz_j|/\|\bz_j\|_2$, $\tau_j=\|\bz_j\|_2/|\bx_j^T\bz_j|$,
+%$\max(\eps_n',\eps_n'')\to 0$, and $\eta^*>0$.
+Let $\eta_j$ and $\tau_j$ be the bias and noise factors in (\ref{defetatau}),
+$\sigma^*=\|\varepsilon\|_2/\sqrt{n}$,
+$\max(\epsilon_n',\epsilon_n'')\to 0$, and $\eta^*>0$.
+Suppose (\ref{con20}) holds with $\eta^*C_1s\sqrt{(2/n)\log(p/\epsilon)} \leq \epsilon_n'$.
+If $\eta_j \leq \eta^*$, then
+\begin{equation}
+\setlength{\abovedisplayskip}{3pt}
+\setlength{\belowdisplayskip}{3pt}
+\label{thm22}
+P\Big\{ \big|\tau_j^{-1}(\hat{\beta}_j - \beta_j) - \bz_j^T \varepsilon/\|\bz_j\|_2\big|
+> \sigma^* \epsilon_n'\Big\} \leq \epsilon.
+\end{equation}
+If in addition (\ref{con21}) holds with $C_2 s (2/n)\log(p/\epsilon)\leq \epsilon_n''$, then for all
+$t\ge (1+\epsilon_n')/(1-\epsilon_n'')$,
+\begin{equation}
+\setlength{\abovedisplayskip}{3pt}
+\setlength{\belowdisplayskip}{3pt}
+\label{thm23}
+P\Big\{|\hat{\beta}_j - \beta_j| \ge \tau_j \hat{\sigma} t \Big\} \leq 2\Phi_{n-1}(-(1-\epsilon_n'')t+\epsilon_n')+2\epsilon,
+\end{equation}
+where $\Phi_n(t)$ is the student-t distribution function with $n$ degrees of freedom.
+Moreover, for the covariance matrix $\bV$ in and all fixed $m$,
+\begin{equation}
+\setlength{\abovedisplayskip}{3pt} %%% 3pt 个人觉得稍妥，可自行设置
+\setlength{\belowdisplayskip}{3pt}
+\label{thm24}
+\lim_{n\to\infty}
+\inf_{\ba\in \mathscr{A}_{n,p,m}}P\Big\{\big|\ba^T\hat{\bbeta} - \ba^T\bbeta\big|
+\leq \hat{\sigma}\Phi^{-1}(1-\alpha/2)(\ba^T\bV\ba)^{1/2}\Big\} = 1-\alpha,
+\end{equation}
+where $\Phi(t) = P\{ N(0,1)\le t\}$ and
+$\mathscr{A}_{n,p,m}=\{\ba: \|\ba\|_0 \leq m, \max_{j \leq p}|a_j|\eta_j\leq \eta^*\}$.
+\end{block}
+
+\end{frame}
+
+
+%----------------------------------------------------------------------------------------
+%	PAGE 3.3 Remark of theorem 1  26
+%----------------------------------------------------------------------------------------
+\begin{frame}
+\frametitle{Remark 1}
+\begin{itemize}
+\item[$\blacksquare$] Condition (\ref{thm22}) establishes the joint asymptotic normality of the LDPE under condition (\ref{con20})
+    This allows us to write the LDPE as an approximate Gaussian sequence.
+\begin{equation}
+\setlength{\abovedisplayskip}{3pt}
+\setlength{\belowdisplayskip}{3pt}
+\label{Gauseq}
+\hat{\beta}_j = \beta_j + N(0,\tau_j^2\sigma^2) + o_P(\tau_j\sigma).
+\end{equation}
+
+\item[$\blacksquare$] Condition (\ref{thm23}) and (\ref{thm24}) justify the approximate coverage probability of the resulting confidence interval.
+
+\item[$\blacksquare$] The uniform signal strength condition is not required for condition (\ref{con20}) and (\ref{con21}).
+\end{itemize}
+\end{frame}
+
+%----------------------------------------------------------------------------------------
+%	PAGE 3.3
+%----------------------------------------------------------------------------------------
+%\begin{frame}
+%\frametitle{Simultaneous confidence interval}
+
+%\end{frame}
+
+%----------------------------------------------------------------------------------------
+%	PAGE 3.3 27
+%----------------------------------------------------------------------------------------
+\begin{frame}
+\frametitle{Simultaneous confidence interval}
+\begin{block}{Theorem 2}
+%\label{th2}
+\scriptsize
+Suppose (\ref{con20}) holds with $\eta^*C_1s \sqrt{(2/n)\log(p/\epsilon)} \le \epsilon_n'$. Then,
+\begin{equation}
+\setlength{\abovedisplayskip}{3pt}
+\setlength{\belowdisplayskip}{3pt}
+\label{th2-27}
+P\Big\{ \max_{\eta_j\le \eta^*} \big|\tau_j^{-1}(\hat{\beta}_j - \beta_j) - \bz_j^T\epsilon/\|\bz_j\|_2\big|
+> \sigma^* \epsilon_n'\Big\}\le\epsilon.
+\end{equation}
+If (\ref{con21}) also holds with $C_2 s (2/n)\log(p/\epsilon)\le \epsilon_n''$, then
+\begin{equation}
+\setlength{\abovedisplayskip}{3pt}
+\setlength{\belowdisplayskip}{3pt}
+\label{th2-28}
+P\Big\{ \max_{\eta_j\le \eta^*} |\hat{\beta}_j - \beta_j|/(\tau_j\hat{\sigma}) > t\Big\}
+\le 2\Phi_n( - (1-\epsilon_n'')t + \epsilon_n')\#\{j:\eta_j\le\eta^*\}+2\epsilon.
+\end{equation}
+If, in addition to (\ref{con20}) and (\ref{con21}),
+$\max_{j\le p}\eta_j\le \eta^*$ and $\max(\epsilon_n',\epsilon)\to 0$ as $\min(n,p)\to \infty$,
+then for fixed $\alpha\in (0,1)$ and $c_0>0$,
+\begin{equation}
+\setlength{\abovedisplayskip}{3pt}
+\setlength{\belowdisplayskip}{3pt}
+\label{th2-29}
+\liminf_{n\to \infty} P\Big\{ \max_{j\le p} \Big|\frac{\hat{\beta}_j - \beta_j}{\tau_j(\hat{\sigma}\wedge \sigma)}\Big|
+\le  c_0 + \sqrt{2\log(p/\alpha)}\Big\}  \ge 1-\alpha.
+\end{equation}
+\end{block}
+\end{frame}
+
+%----------------------------------------------------------------------------------------
+%	PAGE 3.3 28
+%----------------------------------------------------------------------------------------
+\begin{frame}
+\frametitle{Thresholded LDPE}
+\begin{itemize}
+\item[$\blacksquare$] From (\ref{Gauseq}), the $\hat{\bbeta}_{j}$ can be viewed as an approximate Gaussian sequence.
+\item[$\blacksquare$] The approximate Gaussian sequence is not sparse but can be thresholded. Using either the hard or the soft thresholding method:
+
+\begin{scriptsize}
+    \begin{equation} \label{TLDPE}
+    \hat{\bbeta}^{(thr)}_{j}=
+    \left\{
+            \begin{aligned}%{lr}
+            & \hat{\bbeta}_{j} I(|\hat{\bbeta}_{j}|>\hat{t}_{j}),   \\
+            & sgn(\hat{\bbeta}_{j})(|\hat{\bbeta}_{j}|-\hat{t}_{j})^{+}, \\
+            \end{aligned}
+    \right.
+    \end{equation}
+\end{scriptsize}
+with
+\begin{scriptsize}
+    \begin{equation*}
+    \hat{S}^{(thr)}=\{j:|\hat{\bbeta}_{j}|>\hat{t}_{j}\}
+    \end{equation*}
+    where $\hat{t}_j \approx \hat{\sigma}\tau_j\Phi^{-1}(1-\alpha/(2p))$ with $\alpha>0$.
+\end{scriptsize}
+\end{itemize}
+\end{frame}
+
+
+%----------------------------------------------------------------------------------------
+%	PAGE $3.3  29
+%----------------------------------------------------------------------------------------
+\begin{frame}
+\begin{block} {Theorem 3}
+\scriptsize
+    Let $L_0=\Phi^{-1}(1-\alpha/(2p))$, $\tilde{t}_j = \tau_j\sigma L_0$, and
+$\hat{t}_j = (1+{c}_n)\hat{\sigma}\tau_j L_0$ with positive constants $\alpha$ and ${c}_n$. Suppose
+condition (queshao) holds with $\eta^*C_1s/\sqrt{n}\leq \epsilon_n'$, $\max_{j\leq p}\eta_j\leq \eta^*$, and
+\begin{equation}
+P\Big\{\frac{(\hat{\sigma}/\sigma)\vee(\sigma/\hat{\sigma}) -1 + \epsilon_n'\sigma^*/(\hat{\sigma} \wedge \sigma)}
+{1-(\hat{\sigma}/\sigma-1)_+ } > {c}_n\Big\} \leq 2\epsilon.
+\end{equation}
+    Let $\bbeta^{(thr)} = (\beta_1^{(thr)},\ldots,\beta_p^{(thr)})^T$ be the {soft} thresholded LDPE
+with these $\hat{t}_j$.
+Then, there is an event $\Omega_n$ with $P\{\Omega_n^c\} \leq 3 \epsilon$ such %that
+%\begin{equation}
+%E\|\bbeta^{( thr)} - \bbeta\|_2^2I_{\Omega_n} \leq \sum_{j=1}^p \min\{\beta_j^2,\tau_j^2\sigma^2(L_0^2(1+2{c}_n)^2+1)\} +(\eps L_n/p)\sigma^2\sum_{j=1}^p\tau_j^2,
+%\end{equation}
+where $L_n = 4/L_0^3+4{c}_n/L_0+12{c}_n^2L_0$.
+Moreover, with at least probability $1-\alpha - 3\epsilon$,
+\begin{equation}
+\{j: |\beta_j|> (2+2{c}_n)\tilde{t}_j\} \subseteq \hat{S}^{(thr)} \subseteq \{j:\beta_j\neq 0\}.
+\end{equation}
+\end{block}
+\end{frame}
+
+
+%----------------------------------------------------------------------------------------
+%	PAGE $3.3 compare
+%----------------------------------------------------------------------------------------
+%\begin{frame}
+%\frametitle{Thresholded LDPE  VS.  Lasso}
+%\begin{itemize}
+%\item[$\blacksquare$] Uniform signal strength condition
+%\medskip
+%\item[$\blacksquare$] Varaible selection
+%\medskip
+%\item[$\blacksquare$] Thresholded quantities
+%\medskip
+%\item[$\blacksquare$] $\ell_2$ estimation error
+%  \begin{itemize}
+%  \item[$\blacktriangleright$] Make no assumption of uniform signal strength condition.
+%  \item[$\blacktriangleright$] Large $|\bbeta_{j}|$ are selected by the thresholded LDPE and $\bbeta_{j}=\bzero$ are not select in the presence of small $|\bbeta_{j}|\neq\bzero$.
+%  \item[$\blacktriangleright$] Threshold on approximately Gaussian sequence, requires only univariate analysis.
+%  \item[$\blacktriangleright$] The order of the $\ell_2$ error bound is slightly sharper than the typical order of $\|\bbeta\|_0\sigma^2\lambda_{univ}^2$ or $\sigma\lambda_{univ}\sum_{j=1}^p \min\big\{|\beta_j|, \sigma\lambda_{univ}\big\}$
+%  \end{itemize}
+
+%\bigskip
+
+%\item[$\blacksquare$] Lasso and other regularized methods
+%  \begin{itemize}
+%  \item[$\blacktriangleright$] Variable selection consistency requires the uniform signal strength condition.
+%  \item[$\blacktriangleright$] Can not guaranteed to select correctly variables with large $|\bbeta_{j}|$ or $\bbeta_{j}=\bzero$ in the presence of small $|\bbeta_{j}|\neq\bzero$.
+%  \item[$\blacktriangleright$] Thresholded quantities：Thresholding is applied to the gradient $\bX^T(\by-\bX\bbeta)/n$ via the Karush-Kuhn-Tucker-type condition, leading to more complicated nonlinear multivariate analysis.
+% \item[$\blacktriangleright$] Rate optimal in the maximum $\ell_2$ estimation loss for many classes of sparse $\bbeta$
+
+%\end{itemize}
+
+%\end{itemize}
+%\end{frame}
