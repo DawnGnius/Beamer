@@ -7,6 +7,11 @@ beautiful-beamer is a toolchain to create a beautiful looking Beamer presentatio
 * Berlin Style - for professional looking layout.
 * MIT Color Theme - for classy color.
 
+Structure
+==============
+Main file is  "slideshow.tex", tex bodys are stored in "body" floder, "figs" are figures used in the slides. 
+
+
 Example Output
 ==============
 
